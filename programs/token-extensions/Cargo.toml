@@ -1,0 +1,26 @@
+[package]
+name = "token-extensions"
+version = "0.1.0"
+description = "Made with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "token_extensions"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.31.1"
+anchor-spl = "0.31.1"
+spl-token-2022 = "9.0.0"
+spl-token = "8.0.0"
+spl-associated-token-account = "7.0.0"
+spl-memo = "6.0.0"
+spl-token-metadata-interface = "0.7.0"
+spl-token-group-interface = "0.6.0" 

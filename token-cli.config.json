@@ -1,0 +1,14 @@
+{
+  "network": "devnet",
+  "rpcUrl": "https://api.devnet.solana.com",
+  "walletPath": "./wallet.json",
+  "outputDir": "./tokens",
+  "defaultDecimals": 6,
+  "defaultFeeBasisPoints": 100,
+  "defaultMaxFee": 1000000,
+  "defaultInterestRate": 500,
+  "defaultAmount": 1000,
+  "confirmTransactions": true,
+  "saveTokenInfo": true,
+  "showDetailedOutput": true
+}

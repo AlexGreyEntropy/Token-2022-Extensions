@@ -1,0 +1,71 @@
+{
+  "name": "token-2022-extensions-anchor",
+  "version": "1.0.0",
+  "description": "Token-2022 Extensions using Anchor",
+  "main": "index.js",
+  "bin": {
+    "token-extensions-cli": "./bin/token-extensions-cli.js"
+  },
+  "scripts": {
+    "test": "anchor test",
+    "test:extensions": "ts-mocha --timeout 60000 tests/full_extensions.test.ts",
+    "build": "anchor build",
+    "lint": "prettier **/src/**/*.rs --check",
+    "lint:fix": "prettier **/src/**/*.rs --write",
+    "start:validator": "solana-test-validator --reset --quiet",
+    "dev": "concurrently \"npm run start:validator\" \"npm run test:extensions\"",
+    "cli:help": "echo 'Enhanced Token-2022 CLI Commands:\n\n# Setup and Configuration\ntoken-extensions-cli setup\ntoken-extensions-cli config --interactive\ntoken-extensions-cli validate\n\n# Interactive Mode\ntoken-extensions-cli interactive\n\n# Direct Commands\ntoken-extensions-cli create-transfer-fee --name \"DeFi Token\" --fee-basis-points 50 --mint --amount 10000\ntoken-extensions-cli create-interest-bearing --name \"Yield Token\" --rate 500 --mint --amount 5000\ntoken-extensions-cli create-soulbound --name \"Achievement Badge\" --mint --amount 1\n\n# Multi-Extension\ntoken-extensions-cli create-multi-extension --transfer-fee --interest-bearing --mint --amount 100000'",
+    "cli:install": "npm install -g .",
+    "cli:uninstall": "npm uninstall -g token-2022-extensions-anchor",
+    "cli": "node bin/token-extensions-cli.js",
+    "cli:setup": "node bin/token-extensions-cli.js setup",
+    "cli:config": "node bin/token-extensions-cli.js config",
+    "cli:validate": "node bin/token-extensions-cli.js validate",
+    "cli:interactive": "node bin/token-extensions-cli.js interactive",
+    "cli:examples": "node bin/token-extensions-cli.js examples",
+    "cli:list": "node bin/token-extensions-cli.js list",
+    "cli:transfer-fee": "node bin/token-extensions-cli.js create-transfer-fee",
+    "cli:interest": "node bin/token-extensions-cli.js create-interest-bearing",
+    "cli:soulbound": "node bin/token-extensions-cli.js create-soulbound",
+    "cli:non-transferable": "node bin/token-extensions-cli.js create-non-transferable",
+    "cli:mint-close-authority": "node bin/token-extensions-cli.js create-mint-close-authority",
+    "cli:default-account-state": "node bin/token-extensions-cli.js create-default-account-state",
+    "cli:permanent-delegate": "node bin/token-extensions-cli.js create-permanent-delegate",
+    "cli:metadata-pointer": "node bin/token-extensions-cli.js create-metadata-pointer",
+    "cli:transfer-hook": "node bin/token-extensions-cli.js create-transfer-hook",
+    "cli:group-pointer": "node bin/token-extensions-cli.js create-group-pointer",
+    "cli:member-pointer": "node bin/token-extensions-cli.js create-member-pointer",
+    "cli:scaled-ui-amount": "node bin/token-extensions-cli.js create-scaled-ui-amount",
+    "cli:multi-extension": "node bin/token-extensions-cli.js create-multi-extension"
+  },
+  "keywords": [
+    "solana",
+    "anchor",
+    "token-2022",
+    "spl-token",
+    "extensions"
+  ],
+  "author": "SPL Token 2022 Extensions by Alexander Grey",
+  "license": "MIT",
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
+    "@solana/spl-token": "^0.4.0",
+    "@solana/web3.js": "^1.95.0",
+    "bs58": "^6.0.0",
+    "chalk": "^4.1.2",
+    "commander": "^12.0.0",
+    "inquirer": "^8.2.6"
+  },
+  "devDependencies": {
+    "@types/chai": "5.2.2",
+    "@types/mocha": "10.0.10",
+    "@types/node": "24.1.0",
+    "chai": "5.2.1",
+    "concurrently": "9.2.0",
+    "mocha": "11.7.1",
+    "prettier": "3.6.2",
+    "ts-mocha": "11.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
